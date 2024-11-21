@@ -1,0 +1,100 @@
+body {
+  font-family: "DejaVu Sans Mono", monospace;
+  margin: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Container für die Auswahl der geometrischen Form */
+.shape-selection-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  gap: 30px;
+  width: auto;
+  padding: 20px;
+}
+
+/* Auswählbare Formen (Rechteck, Dreieck, Kreis) */
+.shape-selection-item {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+
+input[type="radio"] {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+label {
+  font-size: 1.25rem;
+}
+
+.btn-calculate {
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 8px;
+}
+
+/* Oberflächen, die nach Klick auf eine Form angezeigt werden */
+.shape-view {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Anzeige des Bilds + Flächeninhalt-Formel */
+.shape-section {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+
+  img {
+    width: 100%;
+  }
+
+  label {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/* Container für Eingabefelder */
+.shape-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label + Eingabefeld für einen Wert */
+.shape-input {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Auswahl des Berechnungsmodus (Flächeninhhalt, Umfang, etc.) */
+.calculation-mode-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid black;
+  padding: 25px;
+}
+
+.calculation-mode-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
