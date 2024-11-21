@@ -12,7 +12,7 @@
     <div class="shape-view">
         <div class="shape-section">
             <img src="img/circle-image.webp" />
-            <label id="formula-label">Flächeninhalt: A = π ⋅ r²</label> <!-- Formel Flächeninhalt  -->
+            <label id="formula-label">Flächeninhalt: A = π * r²</label> <!-- Formel Flächeninhalt  -->
         </div>
         <div class="shape-input-container">
             <div class="shape-input">

@@ -82,9 +82,9 @@
 
             case 'circle':
                 if (mode === 'area') {
-                    return 'Flächeninhalt: A = π ⋅ r²';
+                    return 'Flächeninhalt: A = π * r²';
                 } else if (mode === 'perimeter') {
-                    return 'Umfang: U = 2πr';
+                    return 'Umfang: U = 2*π*r';
                 }
                 break;
 
