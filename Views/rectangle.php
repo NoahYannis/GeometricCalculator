@@ -12,7 +12,7 @@
     <div class="shape-view">
         <div class="shape-section">
             <img src="img/rectangle-image.webp" />
-            <label>Flächeninhalt: A = a * b</label> <!-- Formel Flächeninhalt  -->
+            <label id="formula-label">Flächeninhalt: A = a * b</label> <!-- Formel Flächeninhalt  -->
         </div>
         <div class="shape-input-container">
             <div class="shape-input">
@@ -30,7 +30,7 @@
         </div>
         <div class="calculation-mode-container">
             <div class="calculation-mode-item">
-                <input type="radio" id="area" name="calculation-mode" value="area">
+                <input type="radio" id="area" name="calculation-mode" value="area" checked>
                 <label for="area">Flächeninhalt</label>
             </div>
             <div class="calculation-mode-item">

@@ -12,7 +12,7 @@
     <div class="shape-view">
         <div class="shape-section">
             <img src="img/triangle-image.webp" />
-            <label>Flächeninhalt: A = (c * h) / 2</label> <!-- Das c symbolisiert hier die Grundfläche des Bildes  -->
+            <label id="formula-label">Flächeninhalt: A =  0,5 x (c * h)</label> <!-- Das c symbolisiert hier die Grundfläche des Bildes  -->
         </div>
         <div class="shape-input-container">
             <div class="shape-input">
@@ -38,7 +38,7 @@
         </div>
         <div class="calculation-mode-container">
             <div class="calculation-mode-item">
-                <input type="radio" id="area" name="calculation-mode" value="area">
+                <input type="radio" id="area" name="calculation-mode" value="area" checked>
                 <label for="area">Flächeninhalt</label>
             </div>
             <div class="calculation-mode-item">

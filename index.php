@@ -54,9 +54,44 @@
         const calcModeBtn = document.querySelectorAll('input[name="calculation-mode"]');
         calcModeBtn.forEach(btn =>
             btn.addEventListener('change', function() {
-                alert(btn.value);
+                const formulaLabel = document.getElementById('formula-label');
+                const selectedShape = document.querySelector('input[name="shape"]:checked').value;
+                formulaLabel.innerHTML = getCalculationFormula(selectedShape, btn.value);
             })
         );
+    }
+
+    function getCalculationFormula(shape, mode) {
+        switch (shape) {
+
+            case 'rectangle':
+                if (mode === 'area') {
+                    return 'Flächeninhalt: A = a * b';
+                } else if (mode === 'perimeter') {
+                    return 'Umfang: U = 2 * (a + b)';
+                }
+                break;
+
+            case 'triangle':
+                if (mode === 'area') {
+                    return 'Flächeninhalt: A = 0.5 * a * h';
+                } else if (mode === 'perimeter') {
+                    return 'Umfang: U = a + b + c';
+                }
+                break;
+
+            case 'circle':
+                if (mode === 'area') {
+                    return 'Flächeninhalt: A = π ⋅ r²';
+                } else if (mode === 'perimeter') {
+                    return 'Umfang: U = 2πr';
+                }
+                break;
+
+            default:
+                alert('Ungültige Form');
+                return '';
+        }
     }
 
     addCalculationModeListeners();
