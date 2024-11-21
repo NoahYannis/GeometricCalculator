@@ -38,16 +38,28 @@
 
     // Bei Selektion eines Radio Buttons die entsprechende View laden.
     radioButtons.forEach(button => {
-        button.addEventListener('input', function() {
+        button.addEventListener('change', function() {
             const selectedShape = document.querySelector('input[name="shape"]:checked').value;
             fetch(`Views/${selectedShape}.php`)
                 .then(response => response.text())
                 .then(data => {
                     shapeViewContainer.innerHTML = data;
+                    addCalculationModeListeners();
                 })
                 .catch(error => console.error('Error loading view:', error));
         });
     });
+
+    function addCalculationModeListeners() {
+        const calcModeBtn = document.querySelectorAll('input[name="calculation-mode"]');
+        calcModeBtn.forEach(btn =>
+            btn.addEventListener('change', function() {
+                alert(btn.value);
+            })
+        );
+    }
+
+    addCalculationModeListeners();
 </script>
 
 </html>
