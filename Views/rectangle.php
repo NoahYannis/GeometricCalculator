@@ -17,13 +17,13 @@
         <div class="shape-input-container">
             <div class="shape-input">
                 <label for="side-a">a</label>
-                <input type="number" id="side-a" name="side-a">
+                <input type="number" id="side-a" name="side-a" value="0">
             </div>
             <div class="shape-input">
                 <label for="side-b">b</label>
-                <input type="number" id="side-b" name="side-b">
+                <input type="number" id="side-b" name="side-b" value="0">
             </div>
-            <div class="shape-input">
+            <div class="shape-input area">
                 <label for="area">A</label>
                 <input type="number" id="area" name="area" readonly>
             </div>

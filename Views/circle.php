@@ -17,17 +17,17 @@
         <div class="shape-input-container">
             <div class="shape-input">
                 <label for="diameter">d</label>
-                <input type="number" id="diameter" name="diameter">
+                <input type="number" id="diameter" name="diameter" value="0">
             </div>
             <div class="shape-input">
                 <label for="radius">r</label>
-                <input type="number" id="radius" name="radius">
+                <input type="number" id="radius" name="radius" value="0">
             </div>
             <div class="shape-input">
                 <label for="circumference">C</label>
-                <input type="number" id="circumference" name="circumference">
+                <input type="number" id="circumference" name="circumference" value="0">
             </div>
-            <div class="shape-input">
+            <div class="shape-input area">
                 <label for="area">A</label>
                 <input type="number" id="area" name="area" readonly>
             </div>
