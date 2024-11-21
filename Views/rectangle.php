@@ -39,6 +39,9 @@
             </div>
         </div>
     </div>
+    <div class="btn-container">
+        <button class="btn-calculate" id="calculate">Berechnen</button>
+    </div>
 </body>
 
 <script>

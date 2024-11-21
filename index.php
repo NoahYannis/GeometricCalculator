@@ -28,7 +28,6 @@
         <div id="shape-view-container">
             <?php include "Views/rectangle.php"; ?>
         </div>
-        <button class="btn-calculate" id="calculate">Berechnen</button>
     </div>
 </body>
 

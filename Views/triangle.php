@@ -12,7 +12,7 @@
     <div class="shape-view">
         <div class="shape-section">
             <img src="img/triangle-image.webp" />
-            <label id="formula-label">Flächeninhalt: A =  0,5 * (c * h)</label> <!-- Das c symbolisiert hier die Grundfläche des Bildes  -->
+            <label id="formula-label">Flächeninhalt: A = 0,5 * (c * h)</label> <!-- Das c symbolisiert hier die Grundfläche des Bildes  -->
         </div>
         <div class="shape-input-container">
             <div class="shape-input">
@@ -46,6 +46,9 @@
                 <label for="perimeter">Umfang</label>
             </div>
         </div>
+    </div>
+    <div class="btn-container">
+        <button class="btn-calculate" id="calculate">Berechnen</button>
     </div>
 </body>
 
