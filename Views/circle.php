@@ -1,3 +1,30 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $diameter = $_POST['diameter'] ?? 0;
+    $radius = $_POST['radius'] ?? 0;
+    $circumference = $_POST['circumference'] ?? 0;
+    $area = $_POST['area'] ?? 0;
+    $perimeter = $_POST['perimeter'] ?? 0;
+    $calculationMode = $_POST['calculation-mode'] ?? 'area';
+
+    if ($calculationMode === 'area') {
+        if ($radius > 0) {
+            $area = pi() * pow($radius, 2);
+        } elseif ($diameter > 0) {
+            $radius = $diameter / 2;
+            $area = pi() * pow($radius, 2);
+        }
+    } elseif ($calculationMode === 'perimeter') {
+        if ($radius > 0) {
+            $circumference = 2 * pi() * $radius;
+        } elseif ($diameter > 0) {
+            $circumference = pi() * $diameter;
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -14,41 +41,45 @@
             <img src="img/circle-image.webp" />
             <label id="formula-label">Flächeninhalt: A = π * r²</label> <!-- Formel Flächeninhalt  -->
         </div>
-        <div class="shape-input-container">
-            <div class="shape-input">
-                <label for="diameter">d</label>
-                <input type="number" id="diameter" name="diameter" value="0">
+        <form action="index.php" method="POST">
+            <div class="shape-input-container">
+                <div class="shape-input">
+                    <label for="diameter">d</label>
+                    <input type="number" id="diameter" name="diameter" value="<?php echo $diameter ?? 0; ?>">
+                </div>
+                <div class="shape-input">
+                    <label for="radius">r</label>
+                    <input type="number" id="radius" name="radius" value="<?php echo $radius ?? 0; ?>">
+                </div>
+                <div class="shape-input">
+                    <label for="circumference">C</label>
+                    <input type="number" id="circumference" name="circumference" value="<?php echo $circumference ?? 0; ?>">
+                </div>
+                <div class="shape-input area">
+                    <label for="area">A</label>
+                    <input type="number" id="area" name="area" value="<?php echo $area ?? ''; ?>" readonly>
+                </div>
+                <div class="shape-input perimeter">
+                    <label for="perimeter">U</label>
+                    <input type="number" id="perimeter" name="perimeter" value="<?php echo $perimeter ?? ''; ?>" readonly>
+                </div>
             </div>
-            <div class="shape-input">
-                <label for="radius">r</label>
-                <input type="number" id="radius" name="radius" value="0">
+            <div class="calculation-mode-container">
+                <div class="calculation-mode-item">
+                    <input type="radio" id="area" name="calculation-mode" value="area" checked>
+                    <label for="area">Flächeninhalt</label>
+                </div>
+                <div class="calculation-mode-item">
+                    <input type="radio" id="perimeter" name="calculation-mode" value="perimeter">
+                    <label for="perimeter">Umfang</label>
+                </div>
             </div>
-            <div class="shape-input">
-                <label for="circumference">C</label>
-                <input type="number" id="circumference" name="circumference" value="0">
+            <div class="btn-container">
+                <button type="submit" class="btn-calculate" id="calculate">Berechnen</button>
             </div>
-            <div class="shape-input area">
-                <label for="area">A</label>
-                <input type="number" id="area" name="area" readonly>
-            </div>
-        </div>
-        <div class="calculation-mode-container">
-            <div class="calculation-mode-item">
-                <input type="radio" id="area" name="calculation-mode" value="area" checked>
-                <label for="area">Flächeninhalt</label>
-            </div>
-            <div class="calculation-mode-item">
-                <input type="radio" id="perimeter" name="calculation-mode" value="perimeter">
-                <label for="perimeter">Umfang</label>
-            </div>
-        </div>
-    </div>
-    <div class="btn-container">
-        <button class="btn-calculate" id="calculate">Berechnen</button>
+            <input type="hidden" name="shape" value="circle"> <!-- Ausgewählte Form mit an index.php senden -->
+        </form>
     </div>
 </body>
-
-<script>
-</script>
 
 </html>
