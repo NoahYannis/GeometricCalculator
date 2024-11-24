@@ -90,7 +90,7 @@
             case 'triangle':
                 return mode === 'area' ? 'Flächeninhalt: A = 0,5 * c * h' : 'Umfang: U = a + b + c';
             case 'circle':
-                return mode === 'area' ? 'Flächeninhalt: A = π * r²' : 'Umfang: U = 2 * π * r';
+                return mode === 'area' ? 'Flächeninhalt: A = π * r²' : 'Umfang: C = 2 * π * r';
             default:
                 alert(`Unbekannte Form ${shape}`);
         }
