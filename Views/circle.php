@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="shape-input perimeter">
                     <label for="circumference">C</label>
-                    <input type="number" id="circumference" name="circumference" value="<?php echo $circumference ?? 0; ?>">
+                    <input type="number" id="circumference" name="circumference" value="<?php echo $circumference ?? ""; ?>">
                 </div>
             </div>
             <div class="calculation-mode-container">

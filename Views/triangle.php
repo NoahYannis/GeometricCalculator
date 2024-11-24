@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+
     $sideA = $_POST['side-a'] ?? 0;
     $sideB = $_POST['side-b'] ?? 0;
     $sideC = $_POST['side-c'] ?? 0;
@@ -37,20 +37,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <form action="" method="POST">
             <div class="shape-input-container">
-                <div class="shape-input">
+                <div class="shape-input perimeter">
                     <label for="side-a">a</label>
                     <input type="number" id="side-a" name="side-a" value="<?php echo $sideA ?? 0; ?>">
                 </div>
-                <div class="shape-input">
+                <div class="shape-input perimeter">
                     <label for="side-b">b</label>
                     <input type="number" id="side-b" name="side-b" value="<?php echo $sideB ?? 0; ?>">
                 </div>
-
                 <div class="shape-input">
                     <label for="side-c">c</label>
                     <input type="number" id="side-c" name="side-c" value="<?php echo $_POST['side-c'] ?? 0; ?>">
                 </div>
-                <div class="shape-input">
+                <div class="shape-input area">
                     <label for="height-h">h</label>
                     <input type="number" id="height-h" name="height-h" value="<?php echo $_POST['height-h'] ?? 0; ?>">
                 </div>
@@ -62,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="perimeter">U</label>
                     <input type="number" id="perimeter" name="perimeter" value="<?php echo $perimeter ?? ''; ?>" readonly>
                 </div>
+
                 <div class="calculation-mode-container">
                     <div class="calculation-mode-item">
                         <input type="radio" id="area" name="calculation-mode" value="area" checked>
