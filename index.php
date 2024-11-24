@@ -25,9 +25,10 @@
             </div>
         </div>
 
+        <!-- Ausgewählte Form + Eingabefelder + Berechnungsmodus -->
         <div id="shape-view-container">
             <?php
-            $selectedShape = isset($_POST['shape']) ? $_POST['shape'] : 'rectangle';
+            $selectedShape = isset($_POST['shape']) ?? 'rectangle';
             include "Views/{$selectedShape}.php";
             ?>
         </div>
@@ -39,12 +40,6 @@
         const selectedMode = document.querySelector('input[name="calculation-mode"]:checked').value;
         toggleCalculationFields(selectedMode);
     });
-
-    // Zeigt die für die Berechnung relevanten Felder an und versteckt die anderen.
-    function toggleCalculationFields(mode) {
-        document.querySelector('.perimeter').style.display = (mode === 'area') ? 'none' : 'block';
-        document.querySelector('.area').style.display = (mode === 'area') ? 'block' : 'none';
-    }
 
     const radioButtons = document.querySelectorAll('input[name="shape"]');
     const shapeViewContainer = document.getElementById('shape-view-container');
@@ -66,6 +61,14 @@
     });
 
 
+    // Zeigt die für die Berechnung relevanten Felder an und versteckt die anderen.
+    function toggleCalculationFields(mode) {
+        document.querySelector('.perimeter').style.display = (mode === 'area') ? 'none' : 'block';
+        document.querySelector('.area').style.display = (mode === 'area') ? 'block' : 'none';
+    }
+
+
+    // Sorgt dafür, dass nach Laden einer View Event-Listener für das Ändern des Berechnungsmodus registriert werden, damit die Berechnungsformel dynamisch angezeigt werden kann.
     function addCalculationModeListeners() {
         const calcModeBtn = document.querySelectorAll('input[name="calculation-mode"]');
         calcModeBtn.forEach(btn =>
@@ -89,7 +92,7 @@
             case 'circle':
                 return mode === 'area' ? 'Flächeninhalt: A = π * r²' : 'Umfang: U = 2 * π * r';
             default:
-                return '';
+                alert(`Unbekannte Form ${shape}`);
         }
     }
 

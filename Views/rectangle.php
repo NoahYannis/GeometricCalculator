@@ -1,7 +1,9 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
     $sideA = $_POST['side-a'] ?? 0;
     $sideB = $_POST['side-b'] ?? 0;
+
     $area = $_POST['area'] ?? 0;
     $perimeter = $_POST['perimeter'] ?? 0;
     $calculationMode = $_POST['calculation-mode'] ?? 'area';

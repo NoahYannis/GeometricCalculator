@@ -1,8 +1,10 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $diameter = $_POST['diameter'] ?? 0;
     $radius = $_POST['radius'] ?? 0;
     $circumference = $_POST['circumference'] ?? 0;
+    
     $area = $_POST['area'] ?? 0;
     $perimeter = $_POST['perimeter'] ?? 0;
     $calculationMode = $_POST['calculation-mode'] ?? 'area';
