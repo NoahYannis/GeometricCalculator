@@ -11,26 +11,26 @@
 <body>
     <div class="page-container">
         <div class="shape-selection-container">
+            <?php
+            $selectedShape = $_POST['shape'] ?? 'rectangle';
+            ?>
             <div class="shape-selection-item">
-                <input type="radio" id="rectangle" name="shape" value="rectangle" <?php echo $_POST['shape'] === 'rectangle' ? 'checked' : ''; ?>>
+                <input type="radio" id="rectangle" name="shape" value="rectangle" <?php echo $selectedShape === 'rectangle' ? 'checked' : ''; ?>>
                 <label for="rectangle">Rechteck</label>
             </div>
             <div class="shape-selection-item">
-                <input type="radio" id="triangle" name="shape" value="triangle" <?php echo $_POST['shape'] === 'triangle' ? 'checked' : ''; ?>>
+                <input type="radio" id="triangle" name="shape" value="triangle" <?php echo $selectedShape === 'triangle' ? 'checked' : ''; ?>>
                 <label for="triangle">Dreieck</label>
             </div>
             <div class="shape-selection-item">
-                <input type="radio" id="circle" name="shape" value="circle" <?php echo $_POST['shape'] === 'circle' ? 'checked' : ''; ?>>
+                <input type="radio" id="circle" name="shape" value="circle" <?php echo $selectedShape === 'circle' ? 'checked' : ''; ?>>
                 <label for="circle">Kreis</label>
             </div>
         </div>
 
         <!-- Ausgewählte Form + Eingabefelder + Berechnungsmodus -->
         <div id="shape-view-container">
-            <?php
-            $selectedShape = isset($_POST['shape']) ?? 'rectangle';
-            include "Views/{$selectedShape}.php";
-            ?>
+            <?php include "Views/{$selectedShape}.php"; ?>
         </div>
     </div>
 </body>
