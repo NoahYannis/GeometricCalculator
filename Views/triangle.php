@@ -1,4 +1,7 @@
 <?php
+
+$calculationMode = $_POST['calculation-mode'] ?? 'area';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sideA = $_POST['side-a'] ?? 0;
@@ -6,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sideC = $_POST['side-c'] ?? 0;
     $heightH = $_POST['height-h'] ?? 0;
 
-    $area = $_POST['area'] ?? 0;
-    $perimeter = $_POST['perimeter'] ?? 0;
+    $area = $_POST['area'] ?? '';
+    $perimeter = $_POST['perimeter'] ?? '';
     $calculationMode = $_POST['calculation-mode'] ?? 'area';
 
     if ($calculationMode === 'area') {
@@ -64,12 +67,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="calculation-mode-container">
                     <div class="calculation-mode-item">
-                        <input type="radio" id="area" name="calculation-mode" value="area" checked>
-                        <label for="area">Flächeninhalt</label>
+                        <input type="radio" id="area-mode" name="calculation-mode" value="area" <?php echo $calculationMode === 'area' ? 'checked' : ''; ?>>
+                        <label for="area-mode">Flächeninhalt</label>
                     </div>
                     <div class="calculation-mode-item">
-                        <input type="radio" id="perimeter" name="calculation-mode" value="perimeter">
-                        <label for="perimeter">Umfang</label>
+                        <input type="radio" id="perimeter-mode" name="calculation-mode" value="perimeter" <?php echo $calculationMode === 'perimeter' ? 'checked' : ''; ?>>
+                        <label for="perimeter-mode">Umfang</label>
                     </div>
                 </div>
                 <div class="btn-container">

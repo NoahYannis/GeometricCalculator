@@ -1,26 +1,15 @@
 <?php
+
+$calculationMode = $_POST['calculation-mode'] ?? 'area';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $radius = $_POST['radius'] ?? 0;
-    $circumference = $_POST['circumference'] ?? 0;
-
-    $area = $_POST['area'] ?? 0;
-    $perimeter = $_POST['perimeter'] ?? 0;
     $calculationMode = $_POST['calculation-mode'] ?? 'area';
 
     if ($calculationMode === 'area') {
-        if ($radius > 0) {
-            $area = pi() * pow($radius, 2);
-        } elseif ($diameter > 0) {
-            $radius = $diameter / 2;
-            $area = pi() * pow($radius, 2);
-        }
+        $area = pi() * pow($radius, 2);
     } elseif ($calculationMode === 'perimeter') {
-        if ($radius > 0) {
-            $circumference = 2 * pi() * $radius;
-        } elseif ($diameter > 0) {
-            $circumference = pi() * $diameter;
-        }
+        $circumference = 2 * pi() * $radius;
     }
 }
 ?>
@@ -54,16 +43,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="shape-input perimeter">
                     <label for="circumference">C</label>
-                    <input type="number" id="circumference" name="circumference" value="<?php echo $circumference ?? ""; ?>">
+                    <input type="number" id="circumference" name="circumference" value="<?php echo $circumference ?? ""; ?>" readonly>
                 </div>
             </div>
             <div class="calculation-mode-container">
                 <div class="calculation-mode-item">
-                    <input type="radio" id="area" name="calculation-mode" value="area" checked>
+                    <input type="radio" id="area" name="calculation-mode" value="area" <?php echo $calculationMode === 'area' ? 'checked' : ''; ?>>
                     <label for="area">Flächeninhalt</label>
                 </div>
                 <div class="calculation-mode-item">
-                    <input type="radio" id="perimeter" name="calculation-mode" value="perimeter">
+                    <input type="radio" id="perimeter" name="calculation-mode" value="perimeter" <?php echo $calculationMode === 'perimeter' ? 'checked' : ''; ?>>
                     <label for="perimeter">Umfang</label>
                 </div>
             </div>

@@ -1,6 +1,10 @@
 <?php
+
+$calculationMode = $_POST['calculation-mode'] ?? 'area';
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+
     $sideA = $_POST['side-a'] ?? 0;
     $sideB = $_POST['side-b'] ?? 0;
 
@@ -53,11 +57,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="calculation-mode-container">
                     <div class="calculation-mode-item">
-                        <input type="radio" id="area-mode" name="calculation-mode" value="area" checked>
+                        <input type="radio" id="area-mode" name="calculation-mode" value="area" <?php echo $calculationMode === 'area' ? 'checked' : ''; ?>>
                         <label for="area-mode">Flächeninhalt</label>
                     </div>
                     <div class="calculation-mode-item">
-                        <input type="radio" id="perimeter-mode" name="calculation-mode" value="perimeter">
+                        <input type="radio" id="perimeter-mode" name="calculation-mode" value="perimeter" <?php echo $calculationMode === 'perimeter' ? 'checked' : ''; ?>>
                         <label for="perimeter-mode">Umfang</label>
                     </div>
                 </div>
