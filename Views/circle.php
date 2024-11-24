@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="shape-view">
         <div class="shape-section">
             <img src="img/circle-image.webp" />
-            <label id="formula-label">Flächeninhalt: A = π * r²</label> <!-- Formel Flächeninhalt  -->
+            <label id="formula-label"><?php echo $calculationMode === 'area' ? 'Flächeninhalt: A = π * r²' : 'Umfang: C = 2 * π * r'; ?></label>
         </div>
         <form action="index.php" method="POST">
             <div class="shape-input-container">

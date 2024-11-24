@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="shape-view">
         <div class="shape-section">
             <img src="img/triangle-image.webp" />
-            <label id="formula-label">Flächeninhalt: A = 0,5 * c * h</label> <!-- Das c symbolisiert hier die Grundfläche des Bildes -->
+            <label id="formula-label"><?php echo $calculationMode === 'area' ? 'Flächeninhalt: A = 0.5 * c * h' : 'Umfang: U = a + b + c'; ?>
         </div>
         <form action="" method="POST">
             <div class="shape-input-container">
