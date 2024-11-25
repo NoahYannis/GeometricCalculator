@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #ddd;
+  border: 2px solid #ccc;
   gap: 30px;
   padding: 20px;
   border-radius: 10px;
@@ -84,7 +84,7 @@ form {
   padding: 20px;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ddd;
+  border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -157,7 +157,7 @@ input[type="number"]:focus {
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  border: 2px solid #ddd;
+  border: 2px solid #ccc;
   padding: 25px;
   border-radius: 10px;
   background-color: #fff;
