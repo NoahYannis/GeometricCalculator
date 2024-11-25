@@ -8,7 +8,7 @@ body {
 .page-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 /* Container für die Auswahl der geometrischen Form */
@@ -30,6 +30,12 @@ body {
   gap: 10px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 input[type="radio"] {
   height: 1.5rem;
   width: 1.5rem;
@@ -41,13 +47,13 @@ label {
 
 .btn-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    justify-content: center; 
+    align-items: center; 
 }
 
 .btn-calculate {
   margin: 0 auto;
+  justify-self: center;
   padding-inline: 40px;
   padding-block: 8px;
 }
@@ -57,7 +63,7 @@ label {
   display: flex;
   gap: 10px;
   padding: 20px;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   border: 1px solid black;
 }
@@ -82,10 +88,16 @@ label {
   }
 }
 
+.input-container {
+  display: flex;
+  gap: 20px;
+}
+
 /* Container für Eingabefelder */
 .shape-input-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 15px;
 }
 
