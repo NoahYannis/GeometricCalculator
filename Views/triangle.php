@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 id="formula-label"><?php echo $calculationMode === 'area' ? 'Flächeninhalt: A = 0.5 * c * h' : 'Umfang: U = a + b + c'; ?>
             </label>
         </div>
-        <form action=">index.php" method="POST">
+        <form action="index.php" method="POST">
             <div class="input-container">
                 <div class="shape-input-container">
                     <div class="shape-input perimeter">
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="perimeter-mode">Umfang</label>
                     </div>
                 </div>
-                
+
             </div>
             <div class="btn-container">
                 <button type="submit" class="btn-calculate" id="calculate">Berechnen</button>

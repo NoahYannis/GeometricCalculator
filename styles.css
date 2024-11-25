@@ -3,12 +3,16 @@ body {
   margin: 30px;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 .page-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Container für die Auswahl der geometrischen Form */
@@ -16,56 +20,74 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 2px solid #ddd;
   gap: 30px;
-  width: auto;
   padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Auswählbare Formen (Rechteck, Dreieck, Kreis) */
 .shape-selection-item {
   display: flex;
   align-items: center;
-  justify-items: center;
   gap: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  cursor: pointer;
 }
 
 input[type="radio"] {
   height: 1.5rem;
   width: 1.5rem;
+  accent-color: #007bff;
 }
 
 label {
   font-size: 1.25rem;
+  font-weight: bold;
+  color: #444;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .btn-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
 }
 
 .btn-calculate {
-  margin: 0 auto;
-  justify-self: center;
   padding-inline: 40px;
-  padding-block: 8px;
+  padding-block: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
 }
 
 /* Oberflächen, die nach Klick auf eine Form angezeigt werden */
 .shape-view {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   padding: 20px;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Anzeige des Bilds + Flächeninhalt-Formel */
@@ -85,6 +107,7 @@ label {
     text-align: center;
     font-size: 1rem;
     margin-top: 30px;
+    color: #444;
   }
 }
 
@@ -98,31 +121,57 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
-/* Label + Eingabefeld für einen Wert */
 .shape-input {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.area {
-  margin-top: clamp(1rem, 5vw, 20px);
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+  transition: border 0.3s ease;
 }
 
-/* Auswahl des Berechnungsmodus (Flächeninhhalt, Umfang, etc.) */
+input[type="text"]:read-only,
+input[type="number"]:read-only {
+  background-color: #f0f0f0;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 .calculation-mode-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
-  border: 1px solid black;
+  border: 2px solid #ddd;
   padding: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .calculation-mode-item {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
+}
+
+.calculation-mode-item:hover {
+  background-color: #f0f8ff;
+  border-radius: 6px;
 }

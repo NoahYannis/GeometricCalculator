@@ -64,10 +64,10 @@
     // Zeigt die für die Berechnung relevanten Felder an und versteckt die anderen.
     function toggleCalculationFields(mode) {
         document.querySelectorAll('.perimeter').forEach(input => {
-            input.style.display = (mode === 'area') ? 'none' : 'block';
+            input.style.display = (mode === 'area') ? 'none' : 'flex';
         });
         document.querySelectorAll('.area').forEach(input => {
-            input.style.display = (mode === 'area') ? 'block' : 'none';
+            input.style.display = (mode === 'area') ? 'flex' : 'none';
         });
     }
 
