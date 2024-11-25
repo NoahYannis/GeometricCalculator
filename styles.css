@@ -145,10 +145,11 @@ input[type="number"] {
 input[type="text"]:read-only,
 input[type="number"]:read-only {
   background-color: #f0f0f0;
+  border-color: #ccc;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus {
+input[type="text"]:focus:not(:read-only),
+input[type="number"]:focus:not(:read-only) {
   border-color: #007bff;
   outline: none;
 }
@@ -190,7 +191,7 @@ input[type="number"]:focus {
 
   .shape-section {
     width: 70vw;
-    height:  70vh;
+    height: 70vh;
 
     label {
       margin-top: 10px;

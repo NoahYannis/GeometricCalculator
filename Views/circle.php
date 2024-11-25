@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="shape-input-container">
                     <div class="shape-input">
                         <label for="radius">r</label>
-                        <input type="number" id="radius" name="radius" value="<?php echo $radius ?? 0; ?>">
+                        <input type="number" id="radius" name="radius" step="0.01" min="0" value="<?php echo $radius ?? 0; ?>">
                     </div>
                     <div class="shape-input area">
                         <label for="area">A</label>
