@@ -1,7 +1,7 @@
 body {
   font-family: "DejaVu Sans Mono", monospace;
-  margin: 30px;
   padding: 0;
+  margin-top: 20px;
   box-sizing: border-box;
   background-color: #f4f4f4;
   color: #333;
@@ -21,7 +21,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 2px solid #ccc;
-  gap: 30px;
+  gap: 2vw;
   padding: 20px;
   border-radius: 10px;
   background-color: #fff;
@@ -43,7 +43,7 @@ input[type="radio"] {
 }
 
 label {
-  font-size: 1.25rem;
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
   font-weight: bold;
   color: #444;
 }
@@ -56,8 +56,8 @@ form {
 
 .btn-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-calculate {
@@ -101,6 +101,7 @@ form {
 
   img {
     width: 70%;
+    overflow: hidden;
   }
 
   label {
@@ -174,4 +175,27 @@ input[type="number"]:focus {
 .calculation-mode-item:hover {
   background-color: #f0f8ff;
   border-radius: 6px;
+}
+
+/* Responsives Design für Mobilgeräte */
+@media screen and (width < 600px) {
+  .shape-view {
+    flex-direction: column;
+  }
+
+  body {
+    margin: 20px;
+  }
+
+  .shape-section {
+    width: 80vw;
+
+    label {
+      margin-top: 10px;
+    }
+
+    img {
+      width: 70%;
+    }
+  }
 }
