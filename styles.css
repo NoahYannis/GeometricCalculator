@@ -181,6 +181,7 @@ input[type="number"]:focus {
 @media screen and (width < 600px) {
   .shape-view {
     flex-direction: column;
+    height: 70vh;
   }
 
   body {
@@ -188,7 +189,8 @@ input[type="number"]:focus {
   }
 
   .shape-section {
-    width: 80vw;
+    width: 70vw;
+    height:  70vh;
 
     label {
       margin-top: 10px;
@@ -197,5 +199,9 @@ input[type="number"]:focus {
     img {
       width: 70%;
     }
+  }
+
+  .calculation-mode-container {
+    padding: 10px;
   }
 }
