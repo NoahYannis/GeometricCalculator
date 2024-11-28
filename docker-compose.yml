@@ -1,0 +1,11 @@
+name: GeometricCalculator
+services:
+  xampp:
+    container_name: xampp
+    image: geometric-calculator
+    build:
+      context: . 
+      dockerfile: dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
