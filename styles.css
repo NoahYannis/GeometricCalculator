@@ -102,6 +102,7 @@ form {
   img {
     width: 70%;
     overflow: hidden;
+    user-select: none;
   }
 
   label {
@@ -152,6 +153,22 @@ input[type="text"]:focus:not(:read-only),
 input[type="number"]:focus:not(:read-only) {
   border-color: #007bff;
   outline: none;
+}
+
+#perimeter, #area {
+  outline: none;
+}
+
+input[data-circle] {
+  border-color: green;
+}
+
+input[data-rectangle] {
+  border-color: blue;
+}
+
+input[data-triangle] {
+  border-color: black;
 }
 
 .calculation-mode-container {

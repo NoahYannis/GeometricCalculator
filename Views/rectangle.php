@@ -42,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="shape-input-container">
                     <div class="shape-input">
                         <label for="side-a">a</label>
-                        <input type="number" id="side-a" name="side-a" step="0.01" min="0" value="<?php echo $sideA ?? 0; ?>">
+                        <input type="number" data-rectangle id="side-a" name="side-a" step="0.01" min="0" value="<?php echo $sideA ?? 0; ?>">
                     </div>
                     <div class="shape-input">
                         <label for="side-b">b</label>
-                        <input type="number" id="side-b" name="side-b" step="0.01" min="0" value="<?php echo $sideB ?? 0; ?>">
+                        <input type="number" data-rectangle id="side-b" name="side-b" step="0.01" min="0" value="<?php echo $sideB ?? 0; ?>">
                     </div>
                     <div class="shape-input area">
                         <label for="area">A</label>
